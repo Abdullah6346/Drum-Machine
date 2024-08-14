@@ -9,8 +9,8 @@ function App() {
   };
   return (
     <>
-      <div id="drum-machine" className="dru-wrap w-screen ">
-        <div id="display" className=" min-w-full">
+      <div id="drum-machine" className="dru-wrap  ">
+        <div id="display" className=" w-2/4">
           <div className="drum-pad " onClick={handleclick}>
             <audio
               className="clip"

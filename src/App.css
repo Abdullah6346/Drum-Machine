@@ -4,6 +4,9 @@
   padding: 2rem;
   text-align: center;
 }
+.dru-wrap {
+  width: 30vw;
+}
 
 .logo {
   height: 6em;
