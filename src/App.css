@@ -80,8 +80,3 @@
   font-size: 20px;
   color: black;
 }
-.log_free_code_camp::before {
-  content: "\f2c5";
-  color: black;
-  font-weight: 900;
-}

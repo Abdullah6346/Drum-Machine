@@ -10,7 +10,7 @@ function App() {
     const audioELement = audio as HTMLAudioElement;
     audioELement?.play();
   };
-  function handleKeyPress(event) {
+  function handleKeyPress(event: KeyboardEvent) {
     const key = event.key.toUpperCase();
 
     if ("QWEASDZXC".includes(key)) {
@@ -107,9 +107,12 @@ function App() {
           </div>
         </div>
         <div className="logo">
-          <div className="innerlogo">
+          <div className="innerlogo flex gap-2 items-center justify-center  ">
             FCC
-            <FontAwesomeIcon icon={faFreeCodeCamp} />
+            <FontAwesomeIcon
+              className="innnerlogo  inline-block"
+              icon={faFreeCodeCamp}
+            />
           </div>
         </div>
       </div>
