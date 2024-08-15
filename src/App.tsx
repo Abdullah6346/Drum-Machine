@@ -28,8 +28,8 @@ function App() {
 
   return (
     <>
-      <div id="drum-machine" className="dru-wrap  ">
-        <div id="display" className=" w-2/4">
+      <div id="drum-machine" className="dru-wrap min-w-min  ">
+        <div id="display" className="display p-[2rem] max-w-max">
           <div className="drum-pad " onClick={handleclick}>
             <audio
               className="clip"
