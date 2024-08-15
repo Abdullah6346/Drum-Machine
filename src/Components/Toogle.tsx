@@ -1,6 +1,6 @@
-import { useState } from "react";
+import useSharedFormState from "../Hooks/Comhooks";
 export default function ToggleButton() {
-  const [isToggled, setIsToggled] = useState(false);
+  const { isToggled, setIsToggled } = useSharedFormState();
 
   const handleChange = () => {
     setIsToggled(!isToggled);

@@ -3,32 +3,38 @@ import "./App.css";
 import ToggleButton from "./Components/Toogle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
-
+import useSharedFormState from "./Hooks/Comhooks";
 function App() {
+  const { isToggled, setIsToggled } = useSharedFormState();
   const handleclick: MouseEventHandler<HTMLDivElement> = (event) => {
-    const target = event.currentTarget as HTMLElement;
-    const audio = target.querySelector("audio");
-    const audioELement = audio as HTMLAudioElement;
-    audioELement?.play();
+    if (isToggled) {
+      const target = event.currentTarget as HTMLElement;
+      const audio = target.querySelector("audio");
+      const audioELement = audio as HTMLAudioElement;
+      audioELement?.play();
+    }
   };
-  function handleKeyPress(event: KeyboardEvent) {
-    const key = event.key.toUpperCase();
 
-    if ("QWEASDZXC".includes(key)) {
-      const audio = document.getElementById(key) as HTMLAudioElement | null;
-      if (audio) {
-        audio.play();
-      } else {
-        console.warn(`No audio element found for key: ${key}`);
+  useEffect(() => {
+    function handleKeyPress(event: KeyboardEvent) {
+      if (isToggled) {
+        const key = event.key.toUpperCase();
+        if ("QWEASDZXC".includes(key)) {
+          const audio = document.getElementById(key) as HTMLAudioElement | null;
+          if (audio) {
+            audio.play();
+          } else {
+            console.warn(`No audio element found for key: ${key}`);
+          }
+        }
       }
     }
-  }
-  useEffect(() => {
+
     window.addEventListener("keydown", handleKeyPress);
     return () => {
       window.removeEventListener("keydown", handleKeyPress);
     };
-  }, []);
+  }, [isToggled]);
 
   return (
     <>
