@@ -74,3 +74,14 @@
   background-color: orange;
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
+.innerlogo {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+}
+.log_free_code_camp::before {
+  content: "\f2c5";
+  color: black;
+  font-weight: 900;
+}

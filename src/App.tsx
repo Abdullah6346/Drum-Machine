@@ -1,5 +1,8 @@
 import { MouseEventHandler, useEffect } from "react";
 import "./App.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
+
 function App() {
   const handleclick: MouseEventHandler<HTMLDivElement> = (event) => {
     const target = event.currentTarget as HTMLElement;
@@ -28,7 +31,7 @@ function App() {
 
   return (
     <>
-      <div id="drum-machine" className="dru-wrap min-w-min  ">
+      <div id="drum-machine" className="dru-wrap flex min-w-min  ">
         <div id="display" className="display p-[2rem] max-w-max">
           <div className="drum-pad " onClick={handleclick}>
             <audio
@@ -101,6 +104,12 @@ function App() {
               src="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"
             ></audio>
             C
+          </div>
+        </div>
+        <div className="logo">
+          <div className="innerlogo">
+            FCC
+            <FontAwesomeIcon icon={faFreeCodeCamp} />
           </div>
         </div>
       </div>
