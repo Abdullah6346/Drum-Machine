@@ -1,4 +1,4 @@
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, useEffect } from "react";
 import "./App.css";
 function App() {
   const handleclick: MouseEventHandler<HTMLDivElement> = (event) => {
@@ -7,6 +7,25 @@ function App() {
     const audioELement = audio as HTMLAudioElement;
     audioELement?.play();
   };
+  function handleKeyPress(event) {
+    const key = event.key.toUpperCase();
+
+    if ("QWEASDZXC".includes(key)) {
+      const audio = document.getElementById(key) as HTMLAudioElement | null;
+      if (audio) {
+        audio.play();
+      } else {
+        console.warn(`No audio element found for key: ${key}`);
+      }
+    }
+  }
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyPress);
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
+
   return (
     <>
       <div id="drum-machine" className="dru-wrap  ">
