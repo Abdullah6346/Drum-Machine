@@ -1,5 +1,6 @@
 import { MouseEventHandler, useEffect } from "react";
 import "./App.css";
+import ToggleButton from "./Components/Toogle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
 
@@ -115,6 +116,7 @@ function App() {
             />
           </div>
         </div>
+        <ToggleButton />
       </div>
     </>
   );
