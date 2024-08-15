@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
 import useSharedFormState from "./Hooks/Comhooks";
 function App() {
-  const { isToggled, setIsToggled } = useSharedFormState();
+  const { isToggled } = useSharedFormState();
   const handleclick: MouseEventHandler<HTMLDivElement> = (event) => {
     if (isToggled) {
       const target = event.currentTarget as HTMLElement;
